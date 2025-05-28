@@ -20,7 +20,6 @@ def main():
 
         if (not backend.is_url_valid(url, is_playlist)):
             print('URL inválida')
-            return
             continue
 
         path = input(
@@ -47,7 +46,7 @@ def main():
             backend.download(url, path, audio_only,
                              ignore_duplicates, open_folder)
 
-        if input('Sair? [S/n] ') in ACCEPT_STR:
+        if input('Deseja realizar outro download? [S/n] ') not in ACCEPT_STR:
             break
 
 
